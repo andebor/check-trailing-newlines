@@ -7,7 +7,7 @@ git config --global --add safe.directory /github/workspace
 for f in $(git ls-files '*.csv')
 do
   amount=$(grep -cv '[^[:blank:]]' $f)
-  if [[ $amount -gt 0 ]]; then
+  if [[ $amount -gt 1 ]]; then
     total_lines=$(wc -l < $f | xargs)
     line=$((total_lines - amount))
     echo "::error file=$f,line=$line,endLine=$total_lines::File has $amount extra trailing newlines at the end."
