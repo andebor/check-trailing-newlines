@@ -1,0 +1,8 @@
+name: 'Check csv files for trailing newlines'
+description: 'Check if any of the csv files in the repo has more than one trailing newlines. Intended for use in DBT projects to clean seed files.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'corner-down-left'
+  color: 'black'
