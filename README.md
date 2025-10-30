@@ -2,7 +2,7 @@
 
 A linter to check if files contain more than one trailing newline. This will annotate the PR if it finds any matches
 
-[Picture of annotation](.resources/annotation.png)
+![Picture of annotation](.resources/annotation.png)
 
 Initially intended to check DBT seed csv files. (Empty new line rows ends up as null values in the database)
 
