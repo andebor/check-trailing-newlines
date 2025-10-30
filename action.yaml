@@ -1,8 +1,19 @@
 name: 'Check csv files for trailing newlines'
 description: 'Check if any of the csv files in the repo has more than one trailing newlines. Intended for use in DBT projects to clean seed files.'
+inputs:
+  allowed_newlines:
+    description: 'Number of allowed trailing newlines in csv files'
+    required: false
+    default: '1'
+  filter_pattern:
+    description: 'A glob pattern to filter which files to check. i.e. *.csv'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - '${{ inputs.filter_pattern }}'
+    - '${{ inputs.allowed_newlines }}'
 branding:
   icon: 'corner-down-left'
   color: 'black'
