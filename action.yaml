@@ -1,8 +1,8 @@
-name: 'Check csv files for trailing newlines'
-description: 'Check if any of the csv files in the repo has more than one trailing newlines. Intended for use in DBT projects to clean seed files.'
+name: 'Check files for trailing newlines'
+description: 'Check if any of the files in the repo has more than the allowed amount of trailing newlines. Intended for use in DBT projects to clean seed files.'
 inputs:
   allowed_newlines:
-    description: 'Number of allowed trailing newlines in csv files'
+    description: 'Number of allowed trailing newlines in files'
     required: false
     default: '1'
   filter_pattern:
